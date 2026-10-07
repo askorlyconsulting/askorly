@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Askorly | Business Analysis, Project, Data and Program Consulting</title>
+<meta name="description" content="Business analysts, project managers, data analysts and program managers for insurance carriers, asset managers and investment firms.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0F2A43; --slate:#51657A; --mist:#EEF2F5; --paper:#FFFFFF;
+  --teal:#0E7C70; --brass:#A77A2E; --line:#D5DDE4;
+  --serif:'Source Serif 4',Georgia,serif;
+  --sans:'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;font-size:17px}
+img,svg{max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--brass);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--serif);line-height:1.15;font-weight:700}
+h1{font-size:clamp(2.2rem,5vw,3.6rem);letter-spacing:-.02em}
+h2{font-size:clamp(1.7rem,3.2vw,2.4rem);letter-spacing:-.01em;margin-bottom:14px}
+h3{font-size:1.25rem;margin-bottom:8px}
+p.lead{color:var(--slate);max-width:62ch}
+section{padding:88px 0}
+
+/* header */
+header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:var(--serif);font-weight:700;font-size:1.2rem;text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo i{width:26px;height:26px;border:2px solid var(--ink);border-radius:50%;position:relative;display:inline-block}
+.logo i::after{content:"";position:absolute;left:50%;top:-5px;bottom:-5px;width:2px;background:var(--brass);transform:translateX(-50%)}
+nav ul{display:flex;gap:28px;list-style:none;align-items:center}
+nav a{text-decoration:none;font-size:.95rem;font-weight:500}
+nav a:hover{color:var(--teal)}
+.btn{display:inline-block;background:var(--ink);color:#fff;padding:13px 24px;border-radius:4px;text-decoration:none;font-weight:600;border:0;cursor:pointer;font:600 1rem var(--sans);transition:background .2s}
+.btn:hover{background:var(--teal)}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:#fff}
+nav .btn{padding:9px 18px;color:#fff}
+.menu-toggle{display:none;background:none;border:1.5px solid var(--ink);border-radius:4px;padding:7px 12px;font:500 .9rem var(--sans);cursor:pointer}
+
+/* hero */
+.hero{background:var(--mist);padding:72px 0 80px}
+.hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
+.hero p.lead{margin:22px 0 30px;font-size:1.1rem}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap}
+
+/* role panel (the memorable element) */
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:6px;overflow:hidden;box-shadow:0 18px 40px -24px rgba(15,42,67,.35)}
+.tabs{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--line);background:var(--mist)}
+.tabs button{padding:14px 6px;background:none;border:0;border-bottom:3px solid transparent;font:600 .95rem var(--sans);color:var(--slate);cursor:pointer}
+.tabs button[aria-selected="true"]{color:var(--ink);background:var(--paper);border-bottom-color:var(--brass)}
+.tabpanel{padding:26px 26px 30px}
+.tabpanel[hidden]{display:none}
+.tabpanel h3{font-size:1.4rem}
+.tabpanel p{color:var(--slate);margin-bottom:16px}
+.tabpanel ul{list-style:none;border-top:1px solid var(--line)}
+.tabpanel li{padding:11px 0 11px 26px;border-bottom:1px solid var(--line);position:relative;font-size:.97rem}
+.tabpanel li::before{content:"";position:absolute;left:4px;top:19px;width:10px;height:6px;border-left:2px solid var(--teal);border-bottom:2px solid var(--teal);transform:rotate(-45deg)}
+
+/* sectors */
+.sectors{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:40px;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.sector{padding:36px}
+.sector+.sector{border-left:1px solid var(--line)}
+.sector h3{font-size:1.5rem;margin-bottom:12px}
+.sector p{color:var(--slate);margin-bottom:18px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none}
+.tags li{background:var(--mist);padding:5px 12px;border-radius:3px;font-size:.88rem}
+
+/* services */
+.services{background:var(--ink);color:#fff}
+.services h2{color:#fff}
+.services p.lead{color:#B6C4D1}
+.svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:#2A4560;margin-top:40px;border:1px solid #2A4560}
+.svc{background:var(--ink);padding:34px}
+.svc h3{color:#fff}
+.svc p{color:#B6C4D1;font-size:.97rem}
+.svc span{display:block;margin-top:14px;color:#E2BE7A;font-size:.9rem;font-weight:500}
+
+/* approach: real sequence */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:40px;counter-reset:s;list-style:none}
+.steps li{counter-increment:s;border-top:3px solid var(--teal);padding-top:18px}
+.steps li::before{content:"Phase " counter(s);display:block;font-size:.85rem;color:var(--brass);font-weight:600;margin-bottom:6px}
+.steps p{color:var(--slate);font-size:.96rem}
+
+/* contact */
+.contact{background:var(--mist)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:56px}
+.contact-info p{margin-bottom:12px}
+.contact-info strong{display:block;font-size:.9rem;color:var(--slate);font-weight:500}
+form{background:var(--paper);padding:30px;border:1px solid var(--line);border-radius:6px;display:grid;gap:16px}
+label{display:grid;gap:6px;font-weight:500;font-size:.95rem}
+input,select,textarea{font:400 1rem var(--sans);padding:11px 12px;border:1px solid #AEBBC7;border-radius:4px;background:#fff;color:var(--ink);width:100%}
+textarea{min-height:110px;resize:vertical}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+#formMsg{font-weight:500;color:var(--teal)}
+
+footer{padding:32px 0;border-top:1px solid var(--line);font-size:.9rem;color:var(--slate)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+@media (max-width:860px){
+  section{padding:64px 0}
+  .hero-grid,.contact-grid,.sectors,.svc-grid{grid-template-columns:1fr}
+  .sector+.sector{border-left:0;border-top:1px solid var(--line)}
+  .steps{grid-template-columns:1fr 1fr}
+  .menu-toggle{display:block}
+  nav ul{display:none;position:absolute;top:68px;left:0;right:0;background:#fff;flex-direction:column;align-items:flex-start;padding:20px 24px;gap:16px;border-bottom:1px solid var(--line)}
+  nav ul.open{display:flex}
+}
+@media (max-width:520px){
+  .steps,.row{grid-template-columns:1fr}
+  .tabs button{font-size:.8rem}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="logo"><i></i>Askorly</a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+    <nav aria-label="Main">
+      <ul id="menu">
+        <li><a href="#sectors">Industries</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#approach">Approach</a></li>
+        <li><a href="#contact" class="btn">Book a consultation</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>The people who turn financial services strategy into working systems.</h1>
+      <p class="lead">We place and lead business analysts, project managers, data analysts and program managers for insurance carriers, asset managers and investment firms. Regulated work, delivered on schedule.</p>
+      <div class="cta-row">
+        <a href="#contact" class="btn">Talk to a consultant</a>
+        <a href="#services" class="btn ghost">See what each role delivers</a>
+      </div>
+    </div>
+
+    <div class="panel" aria-label="Roles we provide">
+      <div class="tabs" role="tablist">
+        <button role="tab" id="t0" aria-selected="true" aria-controls="p0">Business Analyst</button>
+        <button role="tab" id="t1" aria-selected="false" aria-controls="p1" tabindex="-1">Project Manager</button>
+        <button role="tab" id="t2" aria-selected="false" aria-controls="p2" tabindex="-1">Data Analyst</button>
+        <button role="tab" id="t3" aria-selected="false" aria-controls="p3" tabindex="-1">Program Manager</button>
+      </div>
+      <div class="tabpanel" role="tabpanel" id="p0" aria-labelledby="t0">
+        <h3>Business Analyst</h3>
+        <p>Define what the business needs before anyone builds it.</p>
+        <ul>
+          <li>Requirements for policy admin, claims and underwriting platforms</li>
+          <li>Process maps for onboarding, trade lifecycle and settlement</li>
+          <li>User stories, acceptance criteria and UAT support</li>
+          <li>Gap analysis against regulatory change</li>
+        </ul>
+      </div>
+      <div class="tabpanel" role="tabpanel" id="p1" aria-labelledby="t1" hidden>
+        <h3>Project Manager</h3>
+        <p>Keep scope, budget and vendors under control through go-live.</p>
+        <ul>
+          <li>Plans, RAID logs and status reporting for steering committees</li>
+          <li>Agile, waterfall or hybrid delivery</li>
+          <li>Vendor and system integrator oversight</li>
+          <li>Release, cutover and hypercare management</li>
+        </ul>
+      </div>
+      <div class="tabpanel" role="tabpanel" id="p2" aria-labelledby="t2" hidden>
+        <h3>Data Analyst</h3>
+        <p>Turn policy, claims and portfolio data into numbers leaders trust.</p>
+        <ul>
+          <li>Loss ratio, retention and claims leakage analysis</li>
+          <li>Portfolio performance and risk dashboards</li>
+          <li>Data quality rules, lineage and reconciliation</li>
+          <li>SQL, Python, Power BI and Tableau reporting</li>
+        </ul>
+      </div>
+      <div class="tabpanel" role="tabpanel" id="p3" aria-labelledby="t3" hidden>
+        <h3>Program Manager</h3>
+        <p>Coordinate several projects toward one business outcome.</p>
+        <ul>
+          <li>Roadmaps across core system and data modernization</li>
+          <li>Benefits tracking and dependency management</li>
+          <li>Executive and board-level reporting</li>
+          <li>Change management and stakeholder alignment</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sectors">
+  <div class="wrap">
+    <h2>Built for two regulated industries</h2>
+    <p class="lead">Our consultants have worked inside carriers, brokers, asset managers and banks, so they already know the vocabulary, the controls and the audit expectations.</p>
+    <div class="sectors">
+      <div class="sector">
+        <h3>Insurance</h3>
+        <p>Life, health, property and casualty, and reinsurance programs where legacy platforms and compliance deadlines collide.</p>
+        <ul class="tags">
+          <li>Policy administration</li>
+          <li>Claims transformation</li>
+          <li>Underwriting workbench</li>
+          <li>Actuarial data</li>
+          <li>IFRS 17 / LDTI</li>
+        </ul>
+      </div>
+      <div class="sector">
+        <h3>Investment firms</h3>
+        <p>Asset managers, wealth platforms, hedge funds and private equity teams that need reliable data and controlled change.</p>
+        <ul class="tags">
+          <li>Portfolio management systems</li>
+          <li>Trade and settlement</li>
+          <li>Risk and performance reporting</li>
+          <li>Client onboarding / KYC</li>
+          <li>Regulatory reporting</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="services">
+  <div class="wrap">
+    <h2>Four disciplines, one delivery team</h2>
+    <p class="lead">Engage a single specialist, or a full squad that already works together.</p>
+    <div class="svc-grid">
+      <div class="svc">
+        <h3>Business analysis</h3>
+        <p>Requirements, process design and solution assessment for new platforms and regulatory change.</p>
+        <span>Deliverable: approved requirements and process baseline</span>
+      </div>
+      <div class="svc">
+        <h3>Project management</h3>
+        <p>End-to-end delivery of system implementations, migrations and compliance projects.</p>
+        <span>Deliverable: live solution, on plan</span>
+      </div>
+      <div class="svc">
+        <h3>Data analytics</h3>
+        <p>Reporting, modeling and data governance that give finance, risk and operations one version of the truth.</p>
+        <span>Deliverable: trusted dashboards and datasets</span>
+      </div>
+      <div class="svc">
+        <h3>Program management</h3>
+        <p>Governance and oversight for multi-year transformation across business lines and vendors.</p>
+        <span>Deliverable: coordinated roadmap and realized benefits</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="approach">
+  <div class="wrap">
+    <h2>How an engagement runs</h2>
+    <p class="lead">A short, fixed-scope start so you see the value before committing to a larger program.</p>
+    <ol class="steps">
+      <li><h3>Assess</h3><p>We review your goals, systems, data and current delivery risks in two weeks.</p></li>
+      <li><h3>Plan</h3><p>You get a scoped plan with roles, timeline, cost and success measures.</p></li>
+      <li><h3>Deliver</h3><p>Consultants embed with your team and report progress weekly.</p></li>
+      <li><h3>Hand over</h3><p>Documentation, training and clean ownership transfer to your staff.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap contact-grid">
+    <div class="contact-info">
+      <h2>Tell us what you need to deliver</h2>
+      <p class="lead" style="margin-bottom:28px">Share the project, the timeline and the roles you need. A consultant replies within one business day.</p>
+      <p><strong>Email</strong>askorly2023@gmail.com</p>
+    </div>
+    <form id="contactForm" novalidate>
+      <div class="row">
+        <label>Name<input type="text" name="name" required autocomplete="name"></label>
+        <label>Work email<input type="email" name="email" required autocomplete="email"></label>
+      </div>
+      <div class="row">
+        <label>Company<input type="text" name="company" autocomplete="organization"></label>
+        <label>Industry
+          <select name="industry">
+            <option>Insurance</option>
+            <option>Asset management</option>
+            <option>Investment banking</option>
+            <option>Other</option>
+          </select>
+        </label>
+      </div>
+      <label>Roles needed
+        <select name="role">
+          <option>Business Analyst</option>
+          <option>Project Manager</option>
+          <option>Data Analyst</option>
+          <option>Program Manager</option>
+          <option>A full team</option>
+        </select>
+      </label>
+      <label>Project details<textarea name="message"></textarea></label>
+      <button type="submit" class="btn">Send request</button>
+      <p id="formMsg" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; <span id="yr">2026</span> Askorly. All rights reserved.</span>
+    <span>Privacy &nbsp;|&nbsp; Terms</span>
+  </div>
+</footer>
+
+<script>
+// Role tabs
+const tabs=[...document.querySelectorAll('[role="tab"]')];
+function selectTab(t){
+  tabs.forEach(b=>{
+    const on=b===t;
+    b.setAttribute('aria-selected',on);
+    b.tabIndex=on?0:-1;
+    document.getElementById(b.getAttribute('aria-controls')).hidden=!on;
+  });
+  t.focus();
+}
+tabs.forEach((t,i)=>{
+  t.addEventListener('click',()=>selectTab(t));
+  t.addEventListener('keydown',e=>{
+    if(e.key==='ArrowRight')selectTab(tabs[(i+1)%tabs.length]);
+    if(e.key==='ArrowLeft')selectTab(tabs[(i-1+tabs.length)%tabs.length]);
+  });
+});
+
+// Mobile menu
+const tg=document.querySelector('.menu-toggle'),menu=document.getElementById('menu');
+tg.addEventListener('click',()=>{
+  const open=menu.classList.toggle('open');
+  tg.setAttribute('aria-expanded',open);
+});
+menu.addEventListener('click',e=>{if(e.target.tagName==='A'){menu.classList.remove('open');tg.setAttribute('aria-expanded',false)}});
+
+// Contact form (replace with your backend or a service such as Formspree)
+document.getElementById('contactForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const f=e.target,msg=document.getElementById('formMsg');
+  if(!f.name.value.trim()||!/^\S+@\S+\.\S+$/.test(f.email.value)){
+    msg.style.color='#B3261E';
+    msg.textContent='Enter your name and a valid work email.';
+    return;
+  }
+  msg.style.color='';
+  msg.textContent='Request sent. We will reply within one business day.';
+  f.reset();
+});
+
+document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
