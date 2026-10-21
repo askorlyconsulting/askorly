@@ -3,121 +3,200 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Askorly | Business Analysis, Project, Data and Program Consulting</title>
-<meta name="description" content="Business analysts, project managers, data analysts and program managers for insurance carriers, asset managers and investment firms.">
+<title>Askorly | AI-Powered Business Analysis, Project, Data and Program Consulting</title>
+<meta name="description" content="AI-augmented business analysts, project managers, data analysts and program managers for insurance carriers, asset managers and investment firms. Our consultants work with tools such as Claude and Microsoft Copilot, with human experts accountable for every deliverable.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#0F2A43; --slate:#51657A; --mist:#EEF2F5; --paper:#FFFFFF;
-  --teal:#0E7C70; --brass:#A77A2E; --line:#D5DDE4;
+  --ink:#0B2038; --ink2:#0F2A43; --slate:#51657A; --mist:#EEF2F5; --paper:#FFFFFF;
+  --teal:#0E7C70; --aqua:#2DD4BF; --brass:#A77A2E; --gold:#E2BE7A; --line:#D5DDE4;
+  --violet:#7C6CF0;
   --serif:'Source Serif 4',Georgia,serif;
   --sans:'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;font-size:17px}
+body{font-family:var(--sans);color:var(--ink2);background:var(--paper);line-height:1.6;font-size:17px;overflow-x:hidden}
 img,svg{max-width:100%}
 a{color:inherit}
-:focus-visible{outline:3px solid var(--brass);outline-offset:3px}
-.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px;position:relative}
 h1,h2,h3{font-family:var(--serif);line-height:1.15;font-weight:700}
-h1{font-size:clamp(2.2rem,5vw,3.6rem);letter-spacing:-.02em}
-h2{font-size:clamp(1.7rem,3.2vw,2.4rem);letter-spacing:-.01em;margin-bottom:14px}
+h1{font-size:clamp(2.3rem,5vw,3.8rem);letter-spacing:-.02em}
+h2{font-size:clamp(1.7rem,3.2vw,2.5rem);letter-spacing:-.01em;margin-bottom:14px}
 h3{font-size:1.25rem;margin-bottom:8px}
 p.lead{color:var(--slate);max-width:62ch}
-section{padding:88px 0}
+section{padding:96px 0;position:relative}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font:500 .8rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--teal);margin-bottom:14px}
+.eyebrow::before{content:"";width:22px;height:2px;background:currentColor}
+.grad{background:linear-gradient(100deg,var(--aqua),#8FB8FF 45%,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% auto;animation:shine 8s linear infinite}
+@keyframes shine{to{background-position:200% center}}
 
 /* header */
-header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line)}
+header{position:sticky;top:0;z-index:20;background:rgba(11,32,56,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.1)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
-.logo{font-family:var(--serif);font-weight:700;font-size:1.2rem;text-decoration:none;display:flex;align-items:center;gap:10px}
-.logo i{width:26px;height:26px;border:2px solid var(--ink);border-radius:50%;position:relative;display:inline-block}
-.logo i::after{content:"";position:absolute;left:50%;top:-5px;bottom:-5px;width:2px;background:var(--brass);transform:translateX(-50%)}
+.logo{font-family:var(--serif);font-weight:700;font-size:1.25rem;text-decoration:none;display:flex;align-items:center;gap:10px;color:#fff}
+.logo i{width:26px;height:26px;border:2px solid #fff;border-radius:50%;position:relative;display:inline-block}
+.logo i::after{content:"";position:absolute;left:50%;top:-5px;bottom:-5px;width:2px;background:var(--gold);transform:translateX(-50%)}
 nav ul{display:flex;gap:28px;list-style:none;align-items:center}
-nav a{text-decoration:none;font-size:.95rem;font-weight:500}
-nav a:hover{color:var(--teal)}
-.btn{display:inline-block;background:var(--ink);color:#fff;padding:13px 24px;border-radius:4px;text-decoration:none;font-weight:600;border:0;cursor:pointer;font:600 1rem var(--sans);transition:background .2s}
-.btn:hover{background:var(--teal)}
-.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
-.btn.ghost:hover{background:var(--ink);color:#fff}
-nav .btn{padding:9px 18px;color:#fff}
-.menu-toggle{display:none;background:none;border:1.5px solid var(--ink);border-radius:4px;padding:7px 12px;font:500 .9rem var(--sans);cursor:pointer}
+nav a{text-decoration:none;font-size:.95rem;font-weight:500;color:#D6E2EE}
+nav a:hover{color:var(--aqua)}
+.btn{display:inline-block;background:linear-gradient(135deg,var(--teal),#13A394);color:#fff;padding:14px 26px;border-radius:6px;text-decoration:none;font-weight:600;border:0;cursor:pointer;font:600 1rem var(--sans);transition:transform .2s,box-shadow .2s;box-shadow:0 10px 26px -10px rgba(45,212,191,.7)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 16px 30px -10px rgba(45,212,191,.85)}
+.btn.ghost{background:rgba(255,255,255,.06);color:#fff;border:1.5px solid rgba(255,255,255,.35);box-shadow:none}
+.btn.ghost:hover{background:#fff;color:var(--ink)}
+nav .btn{padding:9px 18px;color:#fff;font-size:.92rem}
+.menu-toggle{display:none;background:none;border:1.5px solid rgba(255,255,255,.5);color:#fff;border-radius:4px;padding:7px 12px;font:500 .9rem var(--sans);cursor:pointer}
 
 /* hero */
-.hero{background:var(--mist);padding:72px 0 80px}
+.hero{background:radial-gradient(1200px 600px at 85% -10%,#173A63 0%,transparent 60%),radial-gradient(900px 500px at -10% 110%,#0B3F46 0%,transparent 60%),var(--ink);color:#fff;padding:84px 0 100px;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse at 50% 30%,#000 20%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse at 50% 30%,#000 20%,transparent 75%)}
+.orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.5;pointer-events:none;animation:float 14s ease-in-out infinite}
+.orb.a{width:340px;height:340px;background:#0E7C70;top:-80px;left:-60px}
+.orb.b{width:300px;height:300px;background:var(--violet);bottom:-100px;right:8%;animation-delay:-6s;opacity:.35}
+@keyframes float{50%{transform:translate(30px,-24px) scale(1.08)}}
 .hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
-.hero p.lead{margin:22px 0 30px;font-size:1.1rem}
+.ai-badge{display:inline-flex;align-items:center;gap:10px;padding:7px 16px 7px 10px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.07);border-radius:999px;font-size:.88rem;margin-bottom:24px;backdrop-filter:blur(6px)}
+.ai-badge b{background:linear-gradient(135deg,var(--aqua),var(--violet));color:#06202c;border-radius:999px;padding:2px 10px;font:600 .75rem var(--mono);letter-spacing:.05em}
+.hero p.lead{margin:22px 0 30px;font-size:1.12rem;color:#C3D2E0}
 .cta-row{display:flex;gap:14px;flex-wrap:wrap}
+.tool-strip{margin-top:38px;padding-top:22px;border-top:1px solid rgba(255,255,255,.14)}
+.tool-strip small{display:block;font:500 .75rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#8FA7BE;margin-bottom:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none}
+.chips li{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);font-size:.88rem;font-weight:500}
+.chips li::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--aqua);box-shadow:0 0 10px var(--aqua)}
 
-/* role panel (the memorable element) */
-.panel{background:var(--paper);border:1px solid var(--line);border-radius:6px;overflow:hidden;box-shadow:0 18px 40px -24px rgba(15,42,67,.35)}
+/* role panel */
+.panel{background:rgba(255,255,255,.97);color:var(--ink2);border:1px solid rgba(255,255,255,.4);border-radius:12px;overflow:hidden;box-shadow:0 40px 80px -30px rgba(0,0,0,.65),0 0 0 6px rgba(255,255,255,.06);transform:perspective(1200px) rotateY(-4deg);transition:transform .5s}
+.panel:hover{transform:perspective(1200px) rotateY(0)}
 .tabs{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--line);background:var(--mist)}
-.tabs button{padding:14px 6px;background:none;border:0;border-bottom:3px solid transparent;font:600 .95rem var(--sans);color:var(--slate);cursor:pointer}
-.tabs button[aria-selected="true"]{color:var(--ink);background:var(--paper);border-bottom-color:var(--brass)}
-.tabpanel{padding:26px 26px 30px}
+.tabs button{padding:14px 6px;background:none;border:0;border-bottom:3px solid transparent;font:600 .92rem var(--sans);color:var(--slate);cursor:pointer;transition:color .2s}
+.tabs button:hover{color:var(--ink)}
+.tabs button[aria-selected="true"]{color:var(--ink);background:#fff;border-bottom-color:var(--brass)}
+.tabpanel{padding:26px 26px 28px;animation:fade .35s}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}}
 .tabpanel[hidden]{display:none}
 .tabpanel h3{font-size:1.4rem}
 .tabpanel p{color:var(--slate);margin-bottom:16px}
 .tabpanel ul{list-style:none;border-top:1px solid var(--line)}
 .tabpanel li{padding:11px 0 11px 26px;border-bottom:1px solid var(--line);position:relative;font-size:.97rem}
 .tabpanel li::before{content:"";position:absolute;left:4px;top:19px;width:10px;height:6px;border-left:2px solid var(--teal);border-bottom:2px solid var(--teal);transform:rotate(-45deg)}
+.tabpanel li.ai{background:linear-gradient(90deg,rgba(124,108,240,.1),transparent);font-weight:500}
+.tabpanel li.ai::before{border-color:var(--violet)}
+.ai-tag{display:inline-block;margin-right:8px;padding:1px 8px;border-radius:4px;background:var(--violet);color:#fff;font:500 .68rem var(--mono);letter-spacing:.06em;vertical-align:1px}
+
+/* stats */
+.stats{background:#fff;padding:0;margin-top:-52px;z-index:5}
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 24px 50px -30px rgba(11,32,56,.45)}
+.stat{padding:28px 24px;text-align:center}
+.stat+.stat{border-left:1px solid var(--line)}
+.stat strong{display:block;font:700 2rem var(--serif);color:var(--ink)}
+.stat span{font-size:.88rem;color:var(--slate)}
 
 /* sectors */
-.sectors{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:40px;border:1px solid var(--line);border-radius:6px;overflow:hidden}
-.sector{padding:36px}
-.sector+.sector{border-left:1px solid var(--line)}
+#sectors{padding-top:96px}
+.sectors{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
+.sector{padding:36px;border:1px solid var(--line);border-radius:12px;background:linear-gradient(180deg,#fff,var(--mist));transition:transform .3s,box-shadow .3s;position:relative;overflow:hidden}
+.sector::after{content:"";position:absolute;left:0;top:0;height:4px;width:100%;background:linear-gradient(90deg,var(--teal),var(--gold))}
+.sector:hover{transform:translateY(-6px);box-shadow:0 26px 40px -26px rgba(11,32,56,.5)}
 .sector h3{font-size:1.5rem;margin-bottom:12px}
 .sector p{color:var(--slate);margin-bottom:18px}
 .tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none}
-.tags li{background:var(--mist);padding:5px 12px;border-radius:3px;font-size:.88rem}
+.tags li{background:#fff;border:1px solid var(--line);padding:5px 12px;border-radius:999px;font-size:.88rem}
+
+/* AI section */
+.ai{background:radial-gradient(900px 500px at 10% 0%,#1A2F66 0%,transparent 60%),radial-gradient(700px 400px at 100% 100%,#0B4A4F 0%,transparent 60%),#091A2E;color:#fff;overflow:hidden}
+.ai h2{color:#fff}
+.ai p.lead{color:#B6C8DA}
+.ai .eyebrow{color:var(--aqua)}
+.ai-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-top:44px}
+.ai-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.ai-card{padding:24px;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(6px);transition:transform .3s,border-color .3s,background .3s}
+.ai-card:hover{transform:translateY(-5px);border-color:var(--aqua);background:rgba(255,255,255,.1)}
+.ai-card .ico{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;margin-bottom:14px;background:linear-gradient(135deg,var(--aqua),var(--violet));color:#06202c;font:600 1.05rem var(--mono)}
+.ai-card h3{font-size:1.08rem;color:#fff}
+.ai-card p{font-size:.92rem;color:#B6C8DA}
+.console{border-radius:12px;background:#06121F;border:1px solid rgba(255,255,255,.14);box-shadow:0 30px 60px -30px #000;overflow:hidden;font-family:var(--mono);font-size:.84rem}
+.console-bar{display:flex;gap:7px;align-items:center;padding:11px 14px;background:#0C2036;border-bottom:1px solid rgba(255,255,255,.1);color:#8FA7BE;font-size:.76rem}
+.console-bar i{width:10px;height:10px;border-radius:50%;background:#33506E}
+.console-bar span{margin-left:8px}
+.console-body{padding:18px 20px 22px;display:grid;gap:12px;color:#C9D8E6}
+.ln{display:flex;gap:10px;opacity:0;animation:rise .6s forwards}
+.ln:nth-child(1){animation-delay:.2s}.ln:nth-child(2){animation-delay:.9s}.ln:nth-child(3){animation-delay:1.6s}.ln:nth-child(4){animation-delay:2.3s}.ln:nth-child(5){animation-delay:3s}
+@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.ln b{flex:none;width:76px;font-weight:500}
+.ln .u{color:var(--gold)}.ln .a{color:var(--aqua)}.ln .h{color:#9C8FFF}.ln .ok{color:#6EE7A8}
+.cursor{display:inline-block;width:8px;height:15px;background:var(--aqua);vertical-align:-2px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.guard{margin-top:40px;padding:22px 26px;border-radius:12px;border:1px solid rgba(110,231,168,.35);background:rgba(110,231,168,.07);display:flex;gap:18px;align-items:flex-start}
+.guard svg{flex:none;margin-top:3px}
+.guard p{color:#CFE6DA;font-size:.97rem}
+.guard strong{color:#fff}
 
 /* services */
-.services{background:var(--ink);color:#fff}
-.services h2{color:#fff}
-.services p.lead{color:#B6C4D1}
-.svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:#2A4560;margin-top:40px;border:1px solid #2A4560}
-.svc{background:var(--ink);padding:34px}
-.svc h3{color:#fff}
-.svc p{color:#B6C4D1;font-size:.97rem}
-.svc span{display:block;margin-top:14px;color:#E2BE7A;font-size:.9rem;font-weight:500}
+.services{background:var(--mist)}
+.svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:40px}
+.svc{background:#fff;padding:32px;border-radius:12px;border:1px solid var(--line);position:relative;transition:transform .3s,box-shadow .3s}
+.svc:hover{transform:translateY(-5px);box-shadow:0 24px 40px -26px rgba(11,32,56,.5)}
+.svc .num{position:absolute;right:24px;top:18px;font:500 .85rem var(--mono);color:#B5C2CE}
+.svc p{color:var(--slate);font-size:.97rem}
+.svc .ai-line{margin-top:14px;padding:10px 14px;border-radius:8px;background:linear-gradient(90deg,rgba(124,108,240,.12),rgba(45,212,191,.1));font-size:.9rem}
+.svc span.d{display:block;margin-top:14px;color:var(--brass);font-size:.9rem;font-weight:600}
 
-/* approach: real sequence */
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:40px;counter-reset:s;list-style:none}
-.steps li{counter-increment:s;border-top:3px solid var(--teal);padding-top:18px}
-.steps li::before{content:"Phase " counter(s);display:block;font-size:.85rem;color:var(--brass);font-weight:600;margin-bottom:6px}
+/* approach */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:44px;counter-reset:s;list-style:none;position:relative}
+.steps li{counter-increment:s;padding-top:22px;position:relative}
+.steps li::after{content:"";position:absolute;top:0;left:0;right:-24px;height:3px;background:linear-gradient(90deg,var(--teal),var(--aqua))}
+.steps li:last-child::after{right:0;background:linear-gradient(90deg,var(--teal),var(--gold))}
+.steps li::before{content:"Phase " counter(s);display:block;font:500 .8rem var(--mono);letter-spacing:.06em;color:var(--brass);margin-bottom:6px;text-transform:uppercase}
 .steps p{color:var(--slate);font-size:.96rem}
 
 /* contact */
-.contact{background:var(--mist)}
+.contact{background:linear-gradient(180deg,var(--mist),#E3EBF1)}
 .contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:56px}
 .contact-info p{margin-bottom:12px}
 .contact-info strong{display:block;font-size:.9rem;color:var(--slate);font-weight:500}
-form{background:var(--paper);padding:30px;border:1px solid var(--line);border-radius:6px;display:grid;gap:16px}
+form{background:#fff;padding:32px;border:1px solid var(--line);border-radius:12px;display:grid;gap:16px;box-shadow:0 30px 50px -34px rgba(11,32,56,.5)}
 label{display:grid;gap:6px;font-weight:500;font-size:.95rem}
-input,select,textarea{font:400 1rem var(--sans);padding:11px 12px;border:1px solid #AEBBC7;border-radius:4px;background:#fff;color:var(--ink);width:100%}
+input,select,textarea{font:400 1rem var(--sans);padding:11px 12px;border:1px solid #AEBBC7;border-radius:6px;background:#fff;color:var(--ink2);width:100%;transition:border-color .2s,box-shadow .2s}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--teal);box-shadow:0 0 0 3px rgba(14,124,112,.2)}
 textarea{min-height:110px;resize:vertical}
 .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 #formMsg{font-weight:500;color:var(--teal)}
 
-footer{padding:32px 0;border-top:1px solid var(--line);font-size:.9rem;color:var(--slate)}
+footer{padding:32px 0;background:var(--ink);font-size:.9rem;color:#9FB3C7}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.note{font-size:.8rem;color:#7F95AA;margin-top:14px}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s}
+.rv.in{opacity:1;transform:none}
 
 @media (max-width:860px){
-  section{padding:64px 0}
-  .hero-grid,.contact-grid,.sectors,.svc-grid{grid-template-columns:1fr}
-  .sector+.sector{border-left:0;border-top:1px solid var(--line)}
+  section{padding:68px 0}
+  .hero-grid,.contact-grid,.sectors,.svc-grid,.ai-grid{grid-template-columns:1fr}
+  .panel{transform:none}
+  .stat-grid{grid-template-columns:1fr 1fr}
+  .stat:nth-child(3){border-left:0}
+  .stat:nth-child(n+3){border-top:1px solid var(--line)}
   .steps{grid-template-columns:1fr 1fr}
   .menu-toggle{display:block}
-  nav ul{display:none;position:absolute;top:68px;left:0;right:0;background:#fff;flex-direction:column;align-items:flex-start;padding:20px 24px;gap:16px;border-bottom:1px solid var(--line)}
+  nav ul{display:none;position:absolute;top:68px;left:0;right:0;background:#0B2038;flex-direction:column;align-items:flex-start;padding:20px 24px;gap:16px;border-bottom:1px solid rgba(255,255,255,.15)}
   nav ul.open{display:flex}
 }
 @media (max-width:520px){
-  .steps,.row{grid-template-columns:1fr}
-  .tabs button{font-size:.8rem}
+  .steps,.row,.ai-cards{grid-template-columns:1fr}
+  .tabs button{font-size:.78rem}
+  .ln b{width:62px}
 }
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}.ln{opacity:1}
+}
 </style>
 </head>
 <body>
@@ -129,6 +208,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
     <nav aria-label="Main">
       <ul id="menu">
         <li><a href="#sectors">Industries</a></li>
+        <li><a href="#ai">AI-powered delivery</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#approach">Approach</a></li>
         <li><a href="#contact" class="btn">Book a consultation</a></li>
@@ -139,13 +219,24 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 
 <main id="top">
 <section class="hero">
+  <div class="orb a"></div><div class="orb b"></div>
   <div class="wrap hero-grid">
     <div>
-      <h1>The people who turn financial services strategy into working systems.</h1>
-      <p class="lead">We place and lead business analysts, project managers, data analysts and program managers for insurance carriers, asset managers and investment firms. Regulated work, delivered on schedule.</p>
+      <div class="ai-badge"><b>AI-POWERED</b> Experts + modern AI assistants</div>
+      <h1>The people who turn financial services strategy into <span class="grad">working systems.</span></h1>
+      <p class="lead">We place and lead business analysts, project managers, data analysts and program managers for insurance carriers, asset managers and investment firms. Our consultants pair deep domain expertise with AI assistants such as Claude and Microsoft Copilot, so regulated work ships faster, with a named expert accountable for every deliverable.</p>
       <div class="cta-row">
         <a href="#contact" class="btn">Talk to a consultant</a>
-        <a href="#services" class="btn ghost">See what each role delivers</a>
+        <a href="#ai" class="btn ghost">See how we use AI</a>
+      </div>
+      <div class="tool-strip">
+        <small>AI tools our consultants work with</small>
+        <ul class="chips">
+          <li>Claude</li>
+          <li>Microsoft Copilot</li>
+          <li>GitHub Copilot</li>
+          <li>Copilot in Power BI</li>
+        </ul>
       </div>
     </div>
 
@@ -163,7 +254,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
           <li>Requirements for policy admin, claims and underwriting platforms</li>
           <li>Process maps for onboarding, trade lifecycle and settlement</li>
           <li>User stories, acceptance criteria and UAT support</li>
-          <li>Gap analysis against regulatory change</li>
+          <li class="ai"><span class="ai-tag">AI</span>Claude-assisted drafting of requirements, test cases and gap analysis, reviewed by your analyst</li>
         </ul>
       </div>
       <div class="tabpanel" role="tabpanel" id="p1" aria-labelledby="t1" hidden>
@@ -173,7 +264,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
           <li>Plans, RAID logs and status reporting for steering committees</li>
           <li>Agile, waterfall or hybrid delivery</li>
           <li>Vendor and system integrator oversight</li>
-          <li>Release, cutover and hypercare management</li>
+          <li class="ai"><span class="ai-tag">AI</span>Copilot-assisted meeting summaries, action tracking and weekly status packs</li>
         </ul>
       </div>
       <div class="tabpanel" role="tabpanel" id="p2" aria-labelledby="t2" hidden>
@@ -181,9 +272,9 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
         <p>Turn policy, claims and portfolio data into numbers leaders trust.</p>
         <ul>
           <li>Loss ratio, retention and claims leakage analysis</li>
-          <li>Portfolio performance and risk dashboards</li>
           <li>Data quality rules, lineage and reconciliation</li>
           <li>SQL, Python, Power BI and Tableau reporting</li>
+          <li class="ai"><span class="ai-tag">AI</span>GitHub Copilot and Copilot in Power BI to speed up queries, code and dashboards</li>
         </ul>
       </div>
       <div class="tabpanel" role="tabpanel" id="p3" aria-labelledby="t3" hidden>
@@ -192,20 +283,34 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
         <ul>
           <li>Roadmaps across core system and data modernization</li>
           <li>Benefits tracking and dependency management</li>
-          <li>Executive and board-level reporting</li>
           <li>Change management and stakeholder alignment</li>
+          <li class="ai"><span class="ai-tag">AI</span>AI-assisted risk scanning and executive reporting across workstreams</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
+<div class="stats">
+  <div class="wrap">
+    <div class="stat-grid rv">
+      <div class="stat"><strong>4</strong><span>Specialist disciplines</span></div>
+      <div class="stat"><strong>2</strong><span>Regulated industries</span></div>
+      <div class="stat"><strong>2 wks</strong><span>Fixed-scope assessment</span></div>
+      <div class="stat"><strong>1 day</strong><span>Reply to your request</span></div>
+    </div>
+  </div>
+</div>
+
 <section id="sectors">
   <div class="wrap">
-    <h2>Built for two regulated industries</h2>
-    <p class="lead">Our consultants have worked inside carriers, brokers, asset managers and banks, so they already know the vocabulary, the controls and the audit expectations.</p>
+    <div class="rv">
+      <div class="eyebrow">Industries</div>
+      <h2>Built for two regulated industries</h2>
+      <p class="lead">Our consultants have worked inside carriers, brokers, asset managers and banks, so they already know the vocabulary, the controls and the audit expectations.</p>
+    </div>
     <div class="sectors">
-      <div class="sector">
+      <div class="sector rv">
         <h3>Insurance</h3>
         <p>Life, health, property and casualty, and reinsurance programs where legacy platforms and compliance deadlines collide.</p>
         <ul class="tags">
@@ -216,7 +321,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
           <li>IFRS 17 / LDTI</li>
         </ul>
       </div>
-      <div class="sector">
+      <div class="sector rv">
         <h3>Investment firms</h3>
         <p>Asset managers, wealth platforms, hedge funds and private equity teams that need reliable data and controlled change.</p>
         <ul class="tags">
@@ -231,30 +336,74 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
   </div>
 </section>
 
+<section id="ai" class="ai">
+  <div class="orb b" style="top:-120px;right:-80px;bottom:auto"></div>
+  <div class="wrap">
+    <div class="rv">
+      <div class="eyebrow">AI-powered delivery</div>
+      <h2>Expert consultants, amplified by AI</h2>
+      <p class="lead">Every Askorly engagement uses AI assistants such as Claude and Microsoft Copilot for the heavy lifting: first drafts, analysis, summaries and code. Our people apply judgment, domain knowledge and sign-off.</p>
+    </div>
+    <div class="ai-grid">
+      <div class="ai-cards">
+        <div class="ai-card rv"><div class="ico">01</div><h3>Faster requirements</h3><p>Turn workshop notes and legacy documents into structured requirements and user stories in hours, not weeks.</p></div>
+        <div class="ai-card rv"><div class="ico">02</div><h3>Smarter analysis</h3><p>Explore claims, policy and portfolio data faster, with AI-assisted SQL, Python and dashboards.</p></div>
+        <div class="ai-card rv"><div class="ico">03</div><h3>Sharper reporting</h3><p>Steering committee packs, risk logs and status updates drafted automatically and reviewed by your manager.</p></div>
+        <div class="ai-card rv"><div class="ico">04</div><h3>Regulatory readiness</h3><p>Compare new rules to current processes and surface gaps early, before they become audit findings.</p></div>
+      </div>
+      <div class="console rv" aria-label="Example of an AI-assisted workflow">
+        <div class="console-bar"><i></i><i></i><i></i><span>requirements-workflow</span></div>
+        <div class="console-body">
+          <div class="ln"><b class="u">Input</b><span>Claims intake workshop notes + current process map</span></div>
+          <div class="ln"><b class="a">AI draft</b><span>38 requirements, 12 user stories, 4 gaps flagged</span></div>
+          <div class="ln"><b class="h">Analyst</b><span>Validates against policy, edits, resolves open questions</span></div>
+          <div class="ln"><b class="ok">Approved</b><span>Baseline signed off by business owner</span></div>
+          <div class="ln"><b class="a">Next</b><span>Test cases generated<span class="cursor"></span></span></div>
+        </div>
+      </div>
+    </div>
+    <div class="guard rv">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6EE7A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.2 8-8 9-4.8-1-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>
+      <p><strong>Human accountable, client data protected.</strong> AI output is always reviewed by a named consultant before it reaches you. We work within your approved AI tools and data policies, and we do not put confidential client data into unapproved systems.</p>
+    </div>
+  </div>
+</section>
+
 <section id="services" class="services">
   <div class="wrap">
-    <h2>Four disciplines, one delivery team</h2>
-    <p class="lead">Engage a single specialist, or a full squad that already works together.</p>
+    <div class="rv">
+      <div class="eyebrow">Services</div>
+      <h2>Four disciplines, one delivery team</h2>
+      <p class="lead">Engage a single specialist, or a full squad that already works together.</p>
+    </div>
     <div class="svc-grid">
-      <div class="svc">
+      <div class="svc rv">
+        <span class="num">01</span>
         <h3>Business analysis</h3>
         <p>Requirements, process design and solution assessment for new platforms and regulatory change.</p>
-        <span>Deliverable: approved requirements and process baseline</span>
+        <div class="ai-line"><span class="ai-tag">AI</span>Faster discovery and documentation with Claude</div>
+        <span class="d">Deliverable: approved requirements and process baseline</span>
       </div>
-      <div class="svc">
+      <div class="svc rv">
+        <span class="num">02</span>
         <h3>Project management</h3>
         <p>End-to-end delivery of system implementations, migrations and compliance projects.</p>
-        <span>Deliverable: live solution, on plan</span>
+        <div class="ai-line"><span class="ai-tag">AI</span>Automated status, minutes and risk tracking with Copilot</div>
+        <span class="d">Deliverable: live solution, on plan</span>
       </div>
-      <div class="svc">
+      <div class="svc rv">
+        <span class="num">03</span>
         <h3>Data analytics</h3>
         <p>Reporting, modeling and data governance that give finance, risk and operations one version of the truth.</p>
-        <span>Deliverable: trusted dashboards and datasets</span>
+        <div class="ai-line"><span class="ai-tag">AI</span>AI-assisted queries, code and dashboards</div>
+        <span class="d">Deliverable: trusted dashboards and datasets</span>
       </div>
-      <div class="svc">
+      <div class="svc rv">
+        <span class="num">04</span>
         <h3>Program management</h3>
         <p>Governance and oversight for multi-year transformation across business lines and vendors.</p>
-        <span>Deliverable: coordinated roadmap and realized benefits</span>
+        <div class="ai-line"><span class="ai-tag">AI</span>Cross-workstream insight for executive reporting</div>
+        <span class="d">Deliverable: coordinated roadmap and realized benefits</span>
       </div>
     </div>
   </div>
@@ -262,25 +411,29 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 
 <section id="approach">
   <div class="wrap">
-    <h2>How an engagement runs</h2>
-    <p class="lead">A short, fixed-scope start so you see the value before committing to a larger program.</p>
+    <div class="rv">
+      <div class="eyebrow">Approach</div>
+      <h2>How an engagement runs</h2>
+      <p class="lead">A short, fixed-scope start so you see the value before committing to a larger program.</p>
+    </div>
     <ol class="steps">
-      <li><h3>Assess</h3><p>We review your goals, systems, data and current delivery risks in two weeks.</p></li>
-      <li><h3>Plan</h3><p>You get a scoped plan with roles, timeline, cost and success measures.</p></li>
-      <li><h3>Deliver</h3><p>Consultants embed with your team and report progress weekly.</p></li>
-      <li><h3>Hand over</h3><p>Documentation, training and clean ownership transfer to your staff.</p></li>
+      <li class="rv"><h3>Assess</h3><p>We review your goals, systems, data and current delivery risks in two weeks, including where AI can safely speed up your work.</p></li>
+      <li class="rv"><h3>Plan</h3><p>You get a scoped plan with roles, timeline, cost and success measures.</p></li>
+      <li class="rv"><h3>Deliver</h3><p>Consultants embed with your team, use AI to move faster, and report progress weekly.</p></li>
+      <li class="rv"><h3>Hand over</h3><p>Documentation, training and clean ownership transfer to your staff.</p></li>
     </ol>
   </div>
 </section>
 
 <section id="contact" class="contact">
   <div class="wrap contact-grid">
-    <div class="contact-info">
+    <div class="contact-info rv">
+      <div class="eyebrow">Contact</div>
       <h2>Tell us what you need to deliver</h2>
       <p class="lead" style="margin-bottom:28px">Share the project, the timeline and the roles you need. A consultant replies within one business day.</p>
       <p><strong>Email</strong>askorly2023@gmail.com</p>
     </div>
-    <form id="contactForm" novalidate>
+    <form id="contactForm" class="rv" novalidate>
       <div class="row">
         <label>Name<input type="text" name="name" required autocomplete="name"></label>
         <label>Work email<input type="email" name="email" required autocomplete="email"></label>
@@ -318,6 +471,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
     <span>&copy; <span id="yr">2026</span> Askorly. All rights reserved.</span>
     <span>Privacy &nbsp;|&nbsp; Terms</span>
   </div>
+  <div class="wrap"><p class="note">Claude is a product of Anthropic. Microsoft Copilot, GitHub Copilot and Power BI are products of Microsoft. All product names are trademarks of their respective owners and are used for identification only.</p></div>
 </footer>
 
 <script>
@@ -347,6 +501,19 @@ tg.addEventListener('click',()=>{
   tg.setAttribute('aria-expanded',open);
 });
 menu.addEventListener('click',e=>{if(e.target.tagName==='A'){menu.classList.remove('open');tg.setAttribute('aria-expanded',false)}});
+
+// Scroll reveal
+const rv=[...document.querySelectorAll('.rv')];
+if('IntersectionObserver' in window){
+  const io=new IntersectionObserver(es=>es.forEach(en=>{
+    if(en.isIntersecting){
+      const sibs=[...en.target.parentElement.children].filter(c=>c.classList.contains('rv'));
+      en.target.style.transitionDelay=(sibs.indexOf(en.target)*90)+'ms';
+      en.target.classList.add('in');io.unobserve(en.target);
+    }
+  }),{threshold:.12});
+  rv.forEach(el=>io.observe(el));
+}else{rv.forEach(el=>el.classList.add('in'))}
 
 // Contact form (replace with your backend or a service such as Formspree)
 document.getElementById('contactForm').addEventListener('submit',e=>{
